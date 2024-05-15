@@ -42,9 +42,9 @@
 Start the server:
 
 ```bash
-npm start
+npm run dev
 # or
-yarn start
+yarn dev
 ```
 
 The server will be available at `http://localhost:3000`.
