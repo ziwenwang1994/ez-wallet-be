@@ -1,0 +1,25 @@
+{
+  "name": "web3-wallet-be",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@solana/web3.js": "^1.91.8",
+    "bip39": "^3.1.0",
+    "cors": "^2.8.5",
+    "ethereumjs-wallet": "^1.0.2",
+    "ethers": "^6.12.1",
+    "express": "^4.19.2",
+    "tweetnacl": "^1.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
