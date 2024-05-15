@@ -25,7 +25,7 @@
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/ez-wallet-be.git
+   git https://github.com/ziwenwang1994/ez-wallet-be.git
    cd ez-wallet-be
    ```
 
@@ -93,7 +93,7 @@ ez-wallet-be/
 └── app.js
 ```
 
-- `server.js`: Main server file where the Express app is defined and endpoints are set up.
+- `app.js`: Main server file where the Express app is defined and endpoints are set up.
 - `services/generateSeed.js`: Service module for generating Ethereum or Solana wallets.
 
 ## License
