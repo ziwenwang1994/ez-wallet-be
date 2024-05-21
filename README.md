@@ -49,53 +49,6 @@ yarn dev
 
 The server will be available at `http://localhost:3000`.
 
-## API Endpoints
-
-### `/new-seed`
-
-Generates a new Ethereum or Solana wallet.
-
-- **URL**: `/new-seed`
-- **Method**: `GET`
-- **Query Parameters**:
-  - `provider` (required): The wallet provider (`eth` for Ethereum, `sol` for Solana).
-
-- **Success Response**:
-  - **Code**: 200
-  - **Content**:
-    ```json
-    {
-      "address": "wallet_address",
-      "privateKey": "wallet_private_key",
-      "mnemonic": "seed_phrase"
-    }
-    ```
-
-- **Error Response**:
-  - **Code**: 401
-  - **Content**:
-    ```json
-    {
-      "message": "Should add a provider."
-    }
-    ```
-
-## Project Structure
-
-```plaintext
-ez-wallet-be/
-├── node_modules/
-├── services/
-│   └── generateSeed.js
-├── .gitignore
-├── package.json
-├── README.md
-└── app.js
-```
-
-- `app.js`: Main server file where the Express app is defined and endpoints are set up.
-- `services/generateSeed.js`: Service module for generating Ethereum or Solana wallets.
-
 ## License
 
 This project is licensed under the MIT License.
