@@ -6,7 +6,7 @@ const { Keypair } = require("@solana/web3.js");
 module.exports = function recoverWallet({ phrase, provider }) {
   try {
     if (provider === "ethereum") {
-      const wallet = ethers.Wallet.fromMnemonic(phrase);
+      const wallet = ethers.Wallet.fromPhrase(phrase);
       return {
         account: wallet.address,
         secretKey: wallet.privateKey,
