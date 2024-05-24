@@ -19,6 +19,23 @@ async function getSolanaAccount(publicKeyString) {
   }
 }
 
+function transformTokenMetadata(metaData) {
+
+  const url = metaData.metadata?.data?.data?.uri || "";
+  const name = metaData.metadata?.data?.data?.name || "";
+  const publicKey = metaData.metadata?.pubkey || "";
+  const amount = metaData.tokenAccount?.account?.data?.parsed?.info?.tokenAmount?.uiAmount || 0;
+
+  let newFormat = {
+      url,
+      name,
+      publicKey,
+      amount,
+  };
+
+  return newFormat;
+}
+
 async function getAccountInfo({ publicKey, connection, TOKEN_PROGRAM_ID }) {
   const accountInfo = await connection.getAccountInfo(publicKey);
   const tokenAccounts = await connection.getParsedTokenAccountsByOwner(
@@ -29,7 +46,7 @@ async function getAccountInfo({ publicKey, connection, TOKEN_PROGRAM_ID }) {
   for(const tokenAccount of tokenAccounts.value) {
     const mintAddress = tokenAccount?.account?.data?.parsed?.info?.mint;
       const metadata = await getTokenMetadata({ mintAddress, connection });
-      tokens.push({ metadata, tokenAccount });
+      tokens.push(transformTokenMetadata({ metadata, tokenAccount }));
   }
   return { accountInfo, tokens };
 }
